@@ -1,0 +1,13 @@
+{% extends 'blogs/base.html' %}
+{% block content %}
+
+{% if error_message %}
+	{{ error_message }}
+{% endif %}
+<code> {{ title.title_text }} <br>
+	{{ title.pub_date }}
+</code>
+{% for body in title.body_set.all %}
+	<p>{{ body.body_text }}</p>
+{% endfor %}
+{% endblock content %}

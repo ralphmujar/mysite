@@ -1,0 +1,16 @@
+{% extends 'blogs/base.html' %}
+
+{% block content %}
+<form action='{% url "blogs:save" %}' method='post'>
+{% csrf_token %}
+	<label> Title : </label> <br>
+	<input type='text' name='title_text'> <br>
+
+	<label> Body: </label> <br>
+	<textarea rows='4' cols='20' name='body_text'>
+	</textarea> <br>
+
+	<input type='submit' value='Post'>
+</form>
+
+{% endblock content%}

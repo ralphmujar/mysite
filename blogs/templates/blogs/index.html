@@ -1,0 +1,12 @@
+{% extends 'blogs/base.html' %}
+
+
+{% block content %}
+
+{% load static %}
+<link rel='stylesheet' type='text/css' href='{% static "blogs/style.css" %}'>
+
+{% for title in titles %}
+<p><a href="{% url 'blogs:detail' title.id %}">{{title.title_text}} </a> </p>
+{% endfor %}
+{% endblock content %}
